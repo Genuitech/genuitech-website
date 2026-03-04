@@ -9,7 +9,12 @@
       "Bash(git -C \"c:/Users/Chadd/Documents/GitHub/genuitech-website/\" remote -v)",
       "Bash(gh repo view cjpierce20/genuitech-website)",
       "Bash(gh auth status)",
-      "Bash(git -C \"c:/Users/Chadd/Documents/GitHub/genuitech-website/\" ls-remote origin)"
+      "Bash(git -C \"c:/Users/Chadd/Documents/GitHub/genuitech-website/\" ls-remote origin)",
+      "Bash(git -C \"c:/Users/Chadd/Documents/GitHub/genuitech-website/\" ls-remote https://github.com/Genuitech/genuitech-website.git)",
+      "Bash(git -C \"c:/Users/Chadd/Documents/GitHub/Marketing/\" status)",
+      "Bash(vercel --version)",
+      "Bash(node --version)",
+      "Bash(npm --version)"
     ]
   }
 }
