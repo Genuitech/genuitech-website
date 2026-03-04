@@ -58,7 +58,7 @@ export default function ContactPage() {
 
                 {/* NOTE: Wire this up to Formspree, Resend, or your own email handler */}
                 <form
-                  action="https://formspree.io/f/YOUR_FORM_ID"
+                  action="https://formspree.io/f/mkovdrdo"
                   method="POST"
                   className="space-y-5"
                 >
