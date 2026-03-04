@@ -32,21 +32,16 @@ export default function Header() {
         <nav className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9 flex-shrink-0">
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-14 h-14 flex-shrink-0">
               <Image
-                src="/genuitech-logo.png"
+                src="/Genuitech Favicon.png"
                 alt="Genuitech"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span
-              className="font-display font-bold text-xl text-slate-50 group-hover:text-cyan-400 transition-colors duration-200"
-            >
-              Genuitech
-            </span>
           </Link>
 
           {/* Desktop Nav */}
