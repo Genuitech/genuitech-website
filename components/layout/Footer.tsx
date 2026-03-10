@@ -76,9 +76,10 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {year} Genuitech LLC. All rights reserved.</p>
-          <p className="gradient-text font-medium">
-            Building AI Agents That Work Like Real Employees
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-200">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-200">Privacy Policy</Link>
+          </div>
         </div>
       </div>
     </footer>
