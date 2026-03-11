@@ -85,8 +85,8 @@ export default function TermsPage() {
           <h2 className="text-lg font-semibold text-slate-100 mb-3">8. Contact</h2>
           <p>
             For questions about these terms, contact us at{" "}
-            <a href="mailto:hello@genuitech.ai" className="text-cyan-400 hover:underline">
-              hello@genuitech.ai
+            <a href="mailto:contact@genuitech.ai" className="text-cyan-400 hover:underline">
+              contact@genuitech.ai
             </a>
             .
           </p>

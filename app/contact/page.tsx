@@ -10,8 +10,8 @@ const contactMethods = [
   {
     icon: <MailIcon />,
     label: "Email",
-    value: "hello@genuitech.ai",
-    href: "mailto:hello@genuitech.ai",
+    value: "contact@genuitech.ai",
+    href: "mailto:contact@genuitech.ai",
   },
   {
     icon: <LinkedInIcon />,

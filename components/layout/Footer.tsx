@@ -42,9 +42,12 @@ export default function Footer() {
               Building AI agents that work like real employees. We solve your biggest operational
               bottlenecks with custom AI-powered applications — fast.
             </p>
-            <p className="mt-4 text-sm text-cyan-500/80 font-medium">
-              hello@genuitech.ai
-            </p>
+            <a
+              href="mailto:contact@genuitech.ai"
+              className="mt-4 inline-block text-sm text-cyan-500/80 font-medium hover:text-cyan-400 transition-colors"
+            >
+              contact@genuitech.ai
+            </a>
           </div>
 
           {/* Link Columns */}

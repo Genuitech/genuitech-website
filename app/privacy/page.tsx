@@ -91,8 +91,8 @@ export default function PrivacyPage() {
           <p>
             You may request access to, correction of, or deletion of any personal information we
             hold about you by contacting us at{" "}
-            <a href="mailto:hello@genuitech.ai" className="text-cyan-400 hover:underline">
-              hello@genuitech.ai
+            <a href="mailto:contact@genuitech.ai" className="text-cyan-400 hover:underline">
+              contact@genuitech.ai
             </a>
             .
           </p>
@@ -111,8 +111,8 @@ export default function PrivacyPage() {
           <h2 className="text-lg font-semibold text-slate-100 mb-3">9. Contact</h2>
           <p>
             For privacy-related questions, contact us at{" "}
-            <a href="mailto:hello@genuitech.ai" className="text-cyan-400 hover:underline">
-              hello@genuitech.ai
+            <a href="mailto:contact@genuitech.ai" className="text-cyan-400 hover:underline">
+              contact@genuitech.ai
             </a>
             .
           </p>
