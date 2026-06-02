@@ -37,14 +37,19 @@ function HeroSection() {
           with a real person answering your questions.
         </p>
 
-        {/* Video placeholder */}
+        {/* Promo Video */}
         <div className="max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden border border-[#1e2d4f]/60">
-          <div className="relative bg-[#0d1024] aspect-video flex items-center justify-center">
-            <div className="text-center">
-              <PlayIcon className="w-16 h-16 text-cyan-400 mx-auto mb-3" />
-              <p className="text-slate-400 text-sm">Watch the 3-minute overview</p>
-            </div>
-          </div>
+          <video
+            className="w-full"
+            controls
+            poster="https://cdn.publer.com/uploads/photos/6a1f18e91f271afe8558fd0e.jpg"
+            preload="metadata"
+          >
+            <source
+              src="https://cdn.publer.com/uploads/videos/6a1f18e91f271afe8558fd0d/JumpStart_AI_Website_Video.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -457,10 +462,4 @@ function CheckIcon({ className }: { className?: string }) {
   );
 }
 
-function PlayIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M8 5v14l11-7z" />
-    </svg>
-  );
-}
+
