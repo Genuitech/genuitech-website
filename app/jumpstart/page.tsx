@@ -204,7 +204,7 @@ function VideoSeries() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="card p-4 text-center flex-1">
-                <div className="font-display font-bold text-2xl gradient-text">$250</div>
+                <div className="font-display font-bold text-2xl gradient-text">$100</div>
                 <div className="text-slate-400 text-sm">per month for 6 months</div>
                 <div className="text-slate-500 text-xs mt-1">Released weekly</div>
               </div>
@@ -307,7 +307,7 @@ function PricingSection() {
               <div className="mb-6">
                 <span className="font-display font-bold text-4xl text-slate-50">$500</span>
                 <span className="text-slate-500 text-sm ml-2">
-                  + $250/mo for 6 months
+                  + $100/mo for 6 months
                 </span>
               </div>
               <ul className="space-y-3 mb-8">
