@@ -46,7 +46,7 @@ function HeroSection() {
             preload="metadata"
           >
             <source
-              src="https://cdn.publer.com/uploads/videos/6a1f18e91f271afe8558fd0d/JumpStart_AI_Website_Video.mp4"
+              src="http://134.209.115.88/media/jumpstart-video.mp4"
               type="video/mp4"
             />
           </video>
