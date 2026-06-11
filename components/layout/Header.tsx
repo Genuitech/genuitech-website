@@ -1,24 +1,42 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const productLinks = [
+  { label: "AI Foundations",      href: "/foundations",    desc: "Done-for-you AI setup" },
+  { label: "AI JumpStart",       href: "/jumpstart",      desc: "Live webinar + training" },
+  { label: "Business Brain",     href: "/business-brain", desc: "Full AI transformation" },
+  { label: "Senior Masterclass", href: "/masterclass",    desc: "Expert-level training" },
+];
+
 const navLinks = [
-  { label: "Services",  href: "/services"  },
-  { label: "JumpStart", href: "/jumpstart" },
-  { label: "Why AI",    href: "/why-ai"    },
-  { label: "Contact",   href: "/contact"   },
+  { label: "Services", href: "/services" },
+  { label: "Why AI",   href: "/why-ai"   },
+  { label: "Contact",  href: "/contact"  },
 ];
 
 export default function Header() {
-  const [scrolled,     setScrolled]     = useState(false);
-  const [mobileOpen,   setMobileOpen]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setProductsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
   return (
@@ -47,6 +65,33 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
+            {/* Products Dropdown */}
+            <div ref={dropdownRef} className="relative">
+              <button
+                onClick={() => setProductsOpen((v) => !v)}
+                className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-200 flex items-center gap-1"
+              >
+                Products
+                <Chevron className={`w-4 h-4 transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {productsOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0d1024] border border-[#1e2d4f]/60 rounded-xl shadow-[0_8px_40px_rgba(0,0,0,0.6)] overflow-hidden">
+                  {productLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-5 py-3 hover:bg-[#131829] transition-colors"
+                      onClick={() => setProductsOpen(false)}
+                    >
+                      <span className="text-sm font-medium text-slate-200">{link.label}</span>
+                      <span className="block text-xs text-slate-500 mt-0.5">{link.desc}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -78,12 +123,24 @@ export default function Header() {
 
         {/* Mobile Dropdown */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-[#1e2d4f]/60 py-4 flex flex-col gap-4">
+          <div className="md:hidden border-t border-[#1e2d4f]/60 py-4 flex flex-col gap-1">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 px-2 pb-1">Products</p>
+            {productLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors px-4 py-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <hr className="border-[#1e2d4f]/60 my-2" />
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-1"
+                className="text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors px-2 py-2"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -91,7 +148,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="btn-primary text-sm w-fit mt-2"
+              className="btn-primary text-sm w-fit mt-3"
               onClick={() => setMobileOpen(false)}
             >
               Book a Free Call
@@ -126,6 +183,14 @@ function ArrowRight({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  );
+}
+
+function Chevron({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
     </svg>
   );
 }
