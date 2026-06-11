@@ -1,10 +1,15 @@
-
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Allow external images if needed in the future
     remotePatterns: [],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/media/:path*",
+        destination: "http://134.209.115.88/media/:path*",
+      },
+    ];
   },
 };
 
