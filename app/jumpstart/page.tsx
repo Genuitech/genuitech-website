@@ -42,11 +42,11 @@ function HeroSection() {
           <video
             className="w-full"
             controls
-            poster="https://cdn.publer.com/uploads/photos/6a1f18e91f271afe8558fd0e.jpg"
+            poster="https://api.genuiweb.ai/media/jumpstart-poster.jpg"
             preload="metadata"
           >
             <source
-              src="http://134.209.115.88/media/jumpstart-video.mp4"
+              src="https://api.genuiweb.ai/media/jumpstart-video.mp4"
               type="video/mp4"
             />
           </video>
